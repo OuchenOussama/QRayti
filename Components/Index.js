@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, Switch, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight, Switch, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import { useGlobalContext } from './Context';
 
-export default function App() {
+export default function App({navigation}) {
 
   {/* Importing the Languages with the different properties and text of each language,
   to be used in the useEffect hook to change appearance based on language
@@ -33,12 +33,12 @@ export default function App() {
   const SignInProps = {
     style: { ...styles.SignIn, backgroundColor: colors.darkBlue },
     underlayColor: colors.myDarkGrey, /* bg-Color changing on touch */
-    onPress: () => console.log("SignIn Pressed") /* onPress is required */
+    onPress: () => navigation.push('SignIn') /* onPress is required */
   }
   const SignUpProps = {
     style: { ...styles.SignUp, backgroundColor: colors.myGrey },
     underlayColor: colors.myDarkGrey, /* bg-Color changing on touch */
-    onPress: () => console.log("SignUp Pressed") /* onPress is required */
+    onPress: () => navigation.push('SignUp') /* onPress is required */
   }
   const ChangeLanguageProps = {
     style: { ...styles.changeLanguage },
@@ -65,7 +65,7 @@ export default function App() {
 
   return (
 
-    <View style={{ ...styles.container, backgroundColor: colors.bgColor }}>
+    <SafeAreaView style={{ ...styles.container, backgroundColor: colors.bgColor }}>
 
       <StatusBar style="auto" />
 
@@ -117,7 +117,7 @@ export default function App() {
         </View>
       }
 
-    </View>
+    </SafeAreaView>
   );
 
 }
