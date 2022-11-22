@@ -13,7 +13,6 @@ const Home = () => {
   const colors = useGlobalContext();
 
   const chartConfig = {
-
     color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
   };
 
@@ -46,7 +45,7 @@ const Home = () => {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    alert(`Code scané avec es données : ${data} retournées!`);
   };
   
   /* if (hasPermission === null) {

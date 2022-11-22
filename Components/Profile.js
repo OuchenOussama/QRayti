@@ -15,7 +15,7 @@ const Profile = () => {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => Actions.Account()} style={styles.Edit}>
-        <Ionicons name="person-circle-outline" size={30} color='grey' />
+        <Ionicons name="create" size={30} color='grey' />
         </TouchableOpacity>
 
         <View style={styles.Profile}>
@@ -80,13 +80,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 120,
     minHeight: '10%',
-    borderRadius: '100%',
     overflow: 'hidden',
     marginTop: '10%'
   },
   ProfileImage: {
     width: '100%',
     height: '100%',
+    borderRadius: '100%',
     resizeMode: 'cover'
   },
   Exit : {

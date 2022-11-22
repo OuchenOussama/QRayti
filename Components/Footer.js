@@ -13,40 +13,23 @@ const Footer = (props) => {
     underlayColor : colors.myGrey,
   };
 
-  function activeProps3(code){
-    return (
-      {color : (code == 3) ? colors.myBlue:colors.darkBlue, fontWeight : (code == 3) ? 'bold':'light'}
-    )
-  }
-  function activeProps2(code){
-    return (
-      {color : (code == 2) ? colors.myBlue:colors.darkBlue, fontWeight : (code == 2) ? 'bold':'light'}
-    )
-  }
-  function activeProps1(code){
-    return (
-      {color : (code == 1) ? colors.myBlue:colors.darkBlue, fontWeight : (code == 1) ? 'bold':'light'}
-    )
-  }
-
   return (
         <View style={styles.footer}>
 
             <TouchableHighlight {...iconProps} onPress={() => Actions.Home()}>
-              <><Ionicons name="home" size={23} color={(props.code == 1) ? colors.myBlue:colors.darkBlue} />
-                <Text style={[styles.Name, activeProps1(props.code)]}>Acceuil</Text></>
+              <><Ionicons name={props.code == 1?"home":"home-outline"} size={23} color={colors.darkBlue} />
+                <Text style={{...styles.Name, color:colors.darkBlue}}>Acceuil</Text></>
             </TouchableHighlight>
 
             <TouchableHighlight {...iconProps} onPress={() => Actions.Dossiers()}>
               <>
-                <Ionicons name="folder-open" size={23} color={(props.code == 2) ? colors.myBlue:colors.darkBlue} />
-                <Text style={[styles.Name, activeProps2(props.code)]}>Dossiers</Text></>
+                <Ionicons name={props.code == 2?"folder-open":"folder-open-outline"} size={23} color={colors.darkBlue} />
+                <Text style={{...styles.Name, color:colors.darkBlue}}>Dossiers</Text></>
             </TouchableHighlight>
 
             <TouchableHighlight {...iconProps} onPress={() => Actions.Notifications()}>
-              <><Ionicons name="notifications" size={23} color={(props.code == 3) ? colors.myBlue:colors.darkBlue} >
-                </Ionicons>
-                <Text style={[styles.Name, activeProps3(props.code)]}>Notifications</Text>
+              <><Ionicons name={props.code == 3?"notifications":"notifications-outline"} size={23} color={colors.darkBlue} />
+                <Text style={{...styles.Name, color:colors.darkBlue}}>Notifications</Text>
                 { props.count != 0 &&
                 <View style={{...styles.notificationCount, backgroundColor: colors.myBlue}}>
                   <Text style={{fontWeight: 'bold', color: colors.bgColor}}>2</Text>
