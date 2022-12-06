@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {TextInput, Text, ScrollView, StatusBar, Image, StyleSheet, TouchableHighlight} from 'react-native'
 import { Actions } from 'react-native-router-flux';
-import { useGlobalContext } from './Context'
+import { useGlobalContext } from './Context';
 
 const SignUp = () => {
   
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: Platform.OS === 'ios' ? 18 : StatusBar.currentHeight
   },
   HeaderLogo: {
     height: 50,
