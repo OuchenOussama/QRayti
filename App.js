@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { ContextProvider } from './Components/Context';
-import Index from './Components/Index';
-import SignIn from './Components/SignIn';
-import SignUp from './Components/SignUp';
-import Home from './Components/Home';
-import Profile from './Components/Profile';
-import Account from './Components/Account';
-import Dossiers from './Components/Dossiers';
-import Notifications from './Components/Notifications';
+import { ContextProvider } from './Views/Context';
+import Index from './Views/Index';
+import SignIn from './Views/SignIn';
+import SignUp from './Views/SignUp';
+import Home from './Views/Home';
+import Profile from './Views/Profile';
+import Account from './Views/Account';
+import Dossiers from './Views/Dossiers';
+import Notifications from './Views/Notifications';
 import {Scene, Router} from 'react-native-router-flux';
 
 export default function App() {
